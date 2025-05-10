@@ -1,0 +1,37 @@
+Movie Search App
+A project that connects to a movie API and displays results in a styled frontend.
+
+Backend
+Technologies used:
+
+Express: Handles the server and routing.
+
+Axios: Makes HTTP requests to the movie API.
+
+CORS: Enables communication between frontend and backend (cross-origin).
+
+Features:
+Creates an API endpoint to fetch movie data.
+
+Acts as a middleware between the external movie API and the React frontend.
+
+Frontend
+Technologies used:
+
+React: Builds the user interface and handles routing with react-router-dom.
+
+Bootstrap: Adds responsive and styled UI components.
+
+Features:
+Search bar to look for movies.
+
+Dynamic display of movie posters.
+
+Detail page for each movie when clicking a poster.
+
+How It Works
+Frontend sends a request to the backend when a user searches for a movie.
+
+Backend uses Axios to call the external movie API.
+
+The response is sent back and rendered in the frontend.
