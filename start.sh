@@ -1,14 +1,10 @@
 #! bin/bash
 
-echo "INSTALANDO DEPENDENCIAS DE FRONTEND"
 cd frontend
+npx serve -s build -l $PORT
 
-npm install
-npm run build
 cd ..
 
-
-echo "INSTALANDO DEPENDENCIAS DE BACKEND"
 cd backend
-npm install
-cd ..
+pwd
+node index.js
