@@ -10,10 +10,10 @@ app.use(cors());
 const PORT = process.env.PORT || 8080;
 const API_KEY = process.env.OMDB_API_KEY;
 
-app.use(express.static(path.join(__dirname, "../frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
 app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "../frontend/build", "index.html"));
+  res.sendFile(path.join(__dirname, "../frontend/dist", "index.html"));
 });
 
 app.get("/api/search", async (req, res) => {
