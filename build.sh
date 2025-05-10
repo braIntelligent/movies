@@ -1,14 +1,11 @@
 #! bin/bash
 
-echo "INSTALANDO DEPENDENCIAS DE FRONTEND"
+echo "INSTALANDO DEPENDENCIAS DE FRONTEND Y BACKEND"
 
 cd frontend
 npm install
 npm run build
-cd ..
 
-
-echo "INSTALANDO DEPENDENCIAS DE BACKEND"
-cd backend
+cd ../backend
+pwd
 npm install
-cd ..
