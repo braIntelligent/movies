@@ -12,10 +12,6 @@ const API_KEY = process.env.OMDB_API_KEY;
 
 app.use(express.static(path.join(__dirname, "../frontend/dist")));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.join(__dirname, "public"));
-});
-
 app.get("/api/search", async (req, res) => {
   const query = req.query.q;
   if (!query) return res.status(400).send({ error: "Falta parámetro 'q'" });
@@ -29,6 +25,7 @@ app.get("/api/search", async (req, res) => {
     res.status(500).send({ error: "Error al consultar la API" });
   }
 });
+
 app.get("/api/movie/:id", async (req, res) => {
   const { id } = req.params;
   try {
@@ -39,6 +36,10 @@ app.get("/api/movie/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json({ error: "Error al obtener detalle de película" });
   }
+});
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "../frontend/dist/index.html")); 
 });
 
 app.listen(PORT, () =>
